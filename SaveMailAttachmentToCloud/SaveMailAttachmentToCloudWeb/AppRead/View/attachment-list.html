@@ -1,0 +1,51 @@
+﻿<table class="table table-hover table-striped table-bordered">
+    <tr class="info">
+        <th>Name</th>
+
+        <th>Size</th>
+        <th>Copy To</th>
+
+    </tr>
+    <tr ng-repeat="attachment in attachments">
+
+        <td>{{attachment.name}}</td>
+
+        <td>{{Math.ceil(attachment.size)}} KB</td>
+        <td>
+            <div class='dropdown btn-group'>
+
+                <a class="btn btn-primary dropdown-toggle" data-toggle="dropdown" href="#">
+
+                    <span class="glyphicon glyphicon-cloud-upload">
+
+
+                    </span>Cloud<span class="caret "></span>
+
+                </a>
+
+
+                <ul class="dropdown-menu">
+
+
+
+                    <li><a ng:click="AuthorizeOneDrive()" href="#">OneDrive Authorization</a></li>
+
+                    <li><a ng:click="SaveToOneDrive(attachment.id)" href="#">Save To OneDrive</a></li>
+
+                    <li><a ng:click="AuthorizeDropbox()" href="#">Dropbox Authorization</a></li>
+
+                    <li><a ng:click="SaveToDropbox(attachment.id)" href="#">Save To Dropbox</a></li>
+
+                    <li><a ng:click="AuthorizeGoogleDrive()" href="#">Google Drive Authorization</a></li>
+
+                    <li><a ng:click="SaveToGoogleDrive(attachment.id)" href="#">Save To Google Drive</a></li>
+
+                </ul>
+
+            </div>
+        </td>
+
+    </tr>
+
+
+</table>
