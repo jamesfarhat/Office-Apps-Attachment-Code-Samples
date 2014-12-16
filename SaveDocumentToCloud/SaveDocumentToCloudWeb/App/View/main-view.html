@@ -1,0 +1,71 @@
+﻿<div class="form-group">
+    <label for="docName" class="col-sm-1 control-label">Document Name</label>
+    <div class="col-sm-2">
+        <input type="text" class="form-control" id="docName" ng-model="docNameWithOutExtension" placeholder="Document Name">
+    </div>
+</div>
+<div class="form-group">
+    <label for="drpDocumentType" class="col-sm-1 control-label">Document Type</label>
+    <div class="col-sm-2">
+        <select class="form-control" ng-change="changeShowExtension()" id="drpDocumentType" ng-model="selectedDocumentType">
+            <option ng-selected="{{documentType.value == selectedDocumentType}}"
+                    ng-repeat="documentType in DocumentTypes"
+                    value="{{documentType.value}}">
+                {{documentType.displayName}}
+            </option>
+        </select>
+
+    </div>
+</div>
+
+<div class="form-group" ng-show="ShowExtension">
+    <label for="extension" class="col-sm-1 control-label">Extension</label>
+    <div class="col-sm-2">
+        <select class="form-control" id="extension" ng-model="selectedExtension">
+            <option ng-selected="{{extension.value == selectedExtension}}"
+                    ng-repeat="extension in Extensions"
+                    value="{{extension.value}}">
+                {{extension.displayName}}
+            </option>
+        </select>
+
+    </div>
+</div>
+
+<div class="form-group" ng-show="docNameWithOutExtension.length">
+    <div class="col-sm-offset-1 col-sm-2">
+
+        <div class='dropdown btn-group'>
+
+            <a class="btn btn-primary dropdown-toggle" data-toggle="dropdown" href="#">
+
+                <span class="glyphicon glyphicon-cloud-upload">
+
+
+                </span>Cloud<span class="caret "></span>
+
+            </a>
+
+
+            <ul class="dropdown-menu">
+
+
+
+                <li><a ng:click="AuthorizeOneDrive()" href="#">OneDrive Authorization</a></li>
+
+                <li><a ng:click="SaveToOneDrive(attachment.id)" href="#">Save To OneDrive</a></li>
+
+                <li><a ng:click="AuthorizeDropbox()" href="#">Dropbox Authorization</a></li>
+
+                <li><a ng:click="SaveToDropbox(attachment.id)" href="#">Save To Dropbox</a></li>
+
+                <li><a ng:click="AuthorizeGoogleDrive()" href="#">Google Drive Authorization</a></li>
+
+                <li><a ng:click="SaveToGoogleDrive(attachment.id)" href="#">Save To Google Drive</a></li>
+
+            </ul>
+
+        </div>
+
+    </div>
+</div>

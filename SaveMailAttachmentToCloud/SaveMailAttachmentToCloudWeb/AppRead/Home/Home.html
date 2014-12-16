@@ -1,0 +1,47 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <title></title>
+    <script src="../../Scripts/jquery-1.9.1.js" type="text/javascript"></script>
+    <link href="../../Content/Office.css" rel="stylesheet" type="text/css" />
+    <!-- <script src="https://appsforoffice.microsoft.com/lib/1.1/hosted/office.js" type="text/javascript"></script>  -->
+    <!-- To enable offline debugging using a local reference to Office.js, use:                        -->
+    <script src="../../Scripts/Office/MicrosoftAjax.js" type="text/javascript"></script>
+    <script src="../../Scripts/Office/1.1/office.js" type="text/javascript"></script>
+    
+    <script src="../../Scripts/bootstrap.min.js"></script>
+    <link href="../../Style/bootstrap.min.css" rel="stylesheet" />
+
+    <link href="../App.css" rel="stylesheet" type="text/css" />
+    <script src="../App.js" type="text/javascript"></script>
+    <link href="Home.css" rel="stylesheet" type="text/css" />
+    <script src="Home.js" type="text/javascript"></script>
+
+    <link href="../../Style/bootstrap-combined.min.css" rel="stylesheet" />
+    <script src="../../Scripts/jquery.cookie.js"></script>
+    <script src="../../Scripts/angular.min.js"></script>
+    <script src="angularApp.js"></script>
+    <script src="../Service/OAuthService.js"></script>
+    <script src="../Controller/AttachmentController.js"></script>
+</head>
+<body>
+
+
+    
+    <div id="Attachmentcontainer" class='form-horizontal well'>
+        <fieldset>
+            <legend>Attachments</legend>
+            <div class="control-group" ng-controller="attachmentController">
+
+                <!-- IE has some Issues with Custom Element so Custom attribute is used -->
+                <div attachment-list></div>
+                
+            </div>
+        </fieldset>
+    </div>
+
+           
+</body>
+</html>
